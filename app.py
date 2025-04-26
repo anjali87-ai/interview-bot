@@ -35,9 +35,7 @@ if st.button("Start Interview"):
     answer = st.text_area("Your Answer:", height=200)
 
     if st.button("Submit Answer"):
-        feedback_prompt = f"Evaluate this answer for the interview question in terms of clarity, correctness, and examples. Provide feedback and a score out of 10.
-
-Answer: {answer}"
+        feedback_prompt = f"Evaluate this answer for the interview question in terms of clarity, correctness, and examples. Provide feedback and a score out of 10.\\n\\nAnswer: {answer}"
         
         feedback_response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
