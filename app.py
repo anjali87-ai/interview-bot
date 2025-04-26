@@ -21,7 +21,7 @@ if st.button("Start Interview"):
         prompt = f"Ask me a behavioral interview question for the role of {role}."
 
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-3",
         messages=[
             {"role": "system", "content": "You are an expert interviewer."},
             {"role": "user", "content": prompt}
@@ -38,7 +38,7 @@ if st.button("Start Interview"):
         feedback_prompt = f"Evaluate this answer for the interview question in terms of clarity, correctness, and examples. Provide feedback and a score out of 10.\\n\\nAnswer: {answer}"
         
         feedback_response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-3",
             messages=[
                 {"role": "system", "content": "You are an expert interviewer."},
                 {"role": "user", "content": feedback_prompt}
